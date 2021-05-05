@@ -1,0 +1,31 @@
+
+
+
+<br>
+
+<!-- <h6><div class="bg-info display-4">Api</div></h6> -->
+<br>
+<br>
+<div class="container">
+  
+    
+    <div class="row"> 
+        <div class="col-md-2">  </div>
+        <div class="col-md-8">  
+            <h3> ListSubscribe</h3>  
+            <!-- <button routerLink ="/listsubscribe" class="btn btn-dark btn-block"> ListSubscribe</button> -->
+        
+        <app-listsubscribe [product]="products"></app-listsubscribe>
+       </div>    
+    </div>
+    <br>
+    <div class="row"> 
+        <div class="col-md-2">  </div>
+        <div class="col-md-8">
+            <h3> ListAsync</h3>
+            <!-- <button routerLink ="/listasync" class="btn btn-dark btn-block"> ListAsync </button> -->
+
+        <app-listasync [products$]="products"></app-listasync>
+        </div>
+    </div>
+</div>

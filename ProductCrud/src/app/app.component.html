@@ -1,0 +1,64 @@
+<h1 class = "text-center">API</h1>
+<br>
+<hr/>
+
+<!-- <div class = "container">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" routerLink="/home">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/add">Add</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/update">Update</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/remove">Remove</a>
+        </li>
+        
+      
+      </ul>
+      
+      
+    </div>
+  </nav>
+  <router-outlet></router-outlet>  -->
+
+
+
+  <mat-toolbar style="background-color: rgb(54, 53, 53);" >
+    <mat-toolbar-row style="color: rgb(35, 20, 241);">
+    <button mat-icon-button>
+    <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+     
+    <span class="menu-spacer"></span>
+    <div>
+    <a mat-button [routerLink]="'/home'"> HOME </a>
+    </div>
+     
+    </mat-toolbar-row>
+     
+    </mat-toolbar>
+    <mat-sidenav-container autosize ><mat-sidenav #sidenav mode="side">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="'/home'"> Home </a>
+    <a mat-list-item routerLink='add'> Add Product </a>
+    <a mat-list-item [routerLink]="'/update'"> Update Product </a>
+    <a mat-list-item [routerLink]="'remove'">Delete Product</a>
+    <a mat-list-item (click)="sidenav.toggle()" [routerLink]="" mat-list-item></a>
+    </mat-nav-list>
+    </mat-sidenav>
+    <router-outlet></router-outlet>
+
+
+  
