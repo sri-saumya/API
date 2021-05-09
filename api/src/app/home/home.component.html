@@ -1,0 +1,17 @@
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-1">
+            
+        </div>
+        <div class="col-md-11">
+            <mat-tab-group>           
+                <mat-tab label="List Async"> <app-listasync [products$]= "products" (deleteevent)="deleteparent($event)" ></app-listasync> </mat-tab>           
+                <mat-tab label="List Subscribe"> <app-listsubscribe [product]="products"></app-listsubscribe> </mat-tab>          
+                <mat-tab label="Material Table">  <app-materialtable [product]="products"></app-materialtable></mat-tab>           
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

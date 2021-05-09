@@ -1,0 +1,77 @@
+
+<br>
+<br>
+<br>
+<div class = 'row'>
+    
+    <div class ="col-md-2"></div>
+    <div class ="col-md-8">
+    <h1 class='pd-4'>Add</h1>
+    <br>
+    <form (ngSubmit)='submit()' [formGroup] = "addform" novalidate class ="form">
+
+        <!-- <h4 class="text-info">title :</h4> -->
+        <input formControlName='title'
+        type='text'
+        class='form-control'
+        placeholder="Enter title"/>
+        <div class ="alert alert-danger" *ngIf="addform?.get('title')?.hasError('required') && addform?.get('title')?.touched">
+        Title is Required
+        </div>
+
+        <br>
+        <!-- <h4 class="text-info"> quantity :</h4> -->
+        <input formControlName='quantity'
+        type='quantity'
+        class='form-control'
+        placeholder="Enter quantity"/>
+        <div class ="alert alert-danger" *ngIf="!addform?.get('quantity')?.valid && addform?.get('quantity')?.touched">
+        Quantity is Required
+        </div>
+
+        <br>
+        <!-- <h4 class="text-info">price : </h4> -->
+        <input formControlName='price'
+        type='text'
+        class='form-control'
+        placeholder="Enter price"/>
+        <div class ="alert alert-danger" *ngIf="addform?.get('price')?.dirty && addform?.get('price')?.errors && addform?.get('price')?.touched"> 
+        </div>
+
+
+        <br>
+        <!-- <h4 class="text-info">color : </h4> -->
+        <input formControlName='color'
+        type='text'
+        class='form-control'
+        placeholder="Enter color"/>
+        <div class ="alert alert-danger" *ngIf="addform?.get('color')?.dirty && addform?.get('color')?.errors && addform?.get('color')?.touched"> 
+        </div>
+        <br>
+       
+      
+        <div class="form-group">
+        <input formControlName='expiryDate'
+        type ="text"
+        class="form-control" id="fordate"
+        placeholder="Enter Expiry Date" onclick="(this.type='date')" onkeyup="(this.type='date')">  
+        </div>
+        
+
+    
+        <h4 class="text-info">instock : </h4>
+        <label class=" radio-inline">
+            <input type ="radio" [value]="true" formControlName ="inStock">True
+        </label>
+        <label class=" radio-inline">
+            <input type ="radio" [value]="false" formControlName ="inStock">False
+        </label>
+
+
+    <button [disabled] = 'addform.invalid' type="submit" class="btn btn-dark btn-block">ADD</button>
+    <br>
+    </form>
+    </div>
+
+    <div class ="col-md-2"></div>
+</div>

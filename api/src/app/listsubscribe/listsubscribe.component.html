@@ -1,0 +1,33 @@
+
+    <br>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>title</th>
+          <th>price</th>
+          <th>quantity</th>
+          <th>color</th>
+          <th>expiryDate</th>
+          <th>inStock</th>
+          <th>Update</th>
+          <th>Delete</th>
+        
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of products">
+          <td><a [routerLink]="['/product',p.id]"> {{p.id}} </a></td>
+          <td>{{p.title}}</td>
+          <td>{{p.price}}</td>
+          <td>{{p.quantity}}</td>
+          <td>{{p.color}}</td>
+          <td>{{p.expiryDate}}</td>
+          <td>{{p.inStock}}</td>
+          <td><button type="button" class="btn btn-outline-warning"  [routerLink] = "['/product',p.id,ubaseurl]">Update</button></td>
+          <td><button type="button" class="btn btn-outline-danger" [routerLink] = "['/product',p.id,dbaseurl]">Delete</button></td>
+    
+        </tr>
+      </tbody>
+    </table>
